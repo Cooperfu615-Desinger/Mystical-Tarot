@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mystic Tarot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              mystic: {
+                900: '#1a1025',
+                800: '#2d1b4e',
+                700: '#432c7a',
+                600: '#5b3ea8',
+                500: '#7652d6',
+                gold: '#ffd700',
+                silver: '#c0c0c0',
+              }
+            },
+            fontFamily: {
+              // 將微軟正黑體設定為首選字體，保留襯線體作為後備以維持英文的神秘感
+              serif: ['"Microsoft JhengHei"', '"微軟正黑體"', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+              sans: ['"Microsoft JhengHei"', '"微軟正黑體"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            },
+            animation: {
+              'fade-in': 'fadeIn 1s ease-out',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'flip': 'flip 0.6s forwards',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              flip: {
+                '0%': { transform: 'rotateY(0deg)' },
+                '100%': { transform: 'rotateY(180deg)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Custom scrollbar for mystical feel */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1a1025;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #432c7a;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #5b3ea8;
+      }
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      .preserve-3d {
+        transform-style: preserve-3d;
+      }
+      .backface-hidden {
+        backface-visibility: hidden;
+      }
+      .rotate-y-180 {
+        transform: rotateY(180deg);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-mystic-900 text-white overflow-x-hidden font-serif">
+    <div id="root"></div>
+  </body>
+</html>
